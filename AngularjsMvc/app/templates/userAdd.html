@@ -1,0 +1,57 @@
+﻿<h2>Create</h2>
+<form class="form-horizontal" name="frmAddUser" ng-submit="createUser(user)" novalidate>
+    <h4>Create a new user</h4>
+    <hr />
+    <div class="form-group">
+        <label class="col-lg-2 control-label">First Name(s)</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" name="name" ng-model="user.Name" ng-maxlength="32" required />
+            <span class="text-danger" ng-show="(frmAddUser.name.$touched || frmAddUser.name.$dirty) && frmAddUser.name.$invalid">
+                <span ng-show="frmAddUser.name.$error.required">Name is required</span>
+                <span ng-show="frmAddUser.name.$error.maxlength">Name must be less than or equal to 32</span>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Surname</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" name="surname" ng-model="user.Surname" ng-maxlength="50" ng-minlength="2" />
+            <span class="text-danger" ng-show="frmAddUser.surname.$dirty && (frmAddUser.surname.$error.minlength || frmAddUser.surname.$error.maxlength)">
+                Surname must be in range 2 to 50
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Identity Type</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" name="identity_type" ng-model="user.Identity_Type" ng-maxlength="50" ng-minlength="2" />
+            <span class="text-danger" ng-show="frmAddUser.identity_type.$dirty && (frmAddUser.identity_type.$error.minlength || frmAddUser.identity_type.$error.maxlength)">
+                Identity Type must be in range 2 to 50
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Identity Number</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" name="identiy_number" ng-model="user.Identiy_Number" ng-maxlength="50" ng-minlength="2" />
+            <span class="text-danger" ng-show="frmAddUser.identiy_type.$dirty && (frmAddUser.identiy_type.$error.minlength || frmAddUser.identiy_type.$error.maxlength)">
+                Identity Number must be in range 2 to 50
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Date Of Birth</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" name="date_of_birth" ng-model="user.Date_Of_Birth" ng-maxlength="50" ng-minlength="2" />
+            <span class="text-danger" ng-show="frmAddUser.date_of_birth.$dirty && (frmAddUser.date_of_birth.$error.minlength || frmAddUser.date_of_birth.$error.maxlength)">
+                Date Of B must be in range 2 to 50
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <input type="submit" class="btn btn-success" value="Create" /><!--ng-disabled="frmAddUser.$invalid"-->
+            <a href="#/" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
