@@ -3,25 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AngularjsMvc.DAL;
 using AngularjsMvc.Models.EF;
 
 namespace AngularjsMvc.Controllers
 {
     public class UserController : Controller
     {
-        private AngularjsMvcDbContext db = null;
+
+        private IRepository userRepository;
         public UserController()
         {
-            db = new AngularjsMvcDbContext();
+            this.userRepository = new UserRepostory(new AngularjsMvcDbContext());
         }
+
+        
 
         /*
          * This method retrieves All the users from the database
         */
         public JsonResult Index()
         {
-            var users = db.Users.ToList();
+            
+            var users = this.userRepository.GetUsers();
             return Json(users, JsonRequestBehavior.AllowGet);
+           
         }
 
         /*
@@ -30,7 +36,7 @@ namespace AngularjsMvc.Controllers
        */
         public JsonResult Details(int id)
         {
-            var user = db.Users.Find(id);
+            var user = this.userRepository.GetUserByID(id);
             return Json(user, JsonRequestBehavior.AllowGet);
         }
 
@@ -41,8 +47,8 @@ namespace AngularjsMvc.Controllers
         [HttpPost]
         public JsonResult Create(User user)
         {
-            db.Users.Add(user);
-            db.SaveChanges();
+            this.userRepository.InsertUser(user);
+            this.userRepository.Save();
             return Json(null);
         }
         /*
@@ -53,9 +59,9 @@ namespace AngularjsMvc.Controllers
         [HttpPost]
         public JsonResult Edit(User user)
         {
-            db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            return Json(null);
+           this.userRepository.UpdateUser(user);
+           this.userRepository.Save();
+           return Json(null);
         }
 
         /*
@@ -65,9 +71,9 @@ namespace AngularjsMvc.Controllers
         [HttpPost]
         public JsonResult Delete(int id)
         {
-            var user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+           
+            this.userRepository.DeleteUser(id);
+            this.userRepository.Save();
             return Json(null);
         }
     }
