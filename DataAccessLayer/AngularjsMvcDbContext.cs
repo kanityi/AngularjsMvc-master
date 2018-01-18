@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Commons;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace AngularjsMvc.Models.EF
-{   
-    
+namespace DataAccessLayer
+{
+
     public class AngularjsMvcDbContext : DbContext
     {
         public AngularjsMvcDbContext() : base("name = AngularjsMvcDbContext")

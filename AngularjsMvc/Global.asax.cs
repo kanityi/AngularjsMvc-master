@@ -13,7 +13,7 @@ namespace AngularjsMvc
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<AngularjsMvc.Models.EF.AngularjsMvcDbContext>(null);
+            //Database.SetInitializer<AngularjsMvc.>(null);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularjsMvc", "AngularjsMvc\AngularjsMvc.csproj", "{B37422B5-D8F1-4B36-B461-B5AE1C6DCC05}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presantation Layer", "Presantation Layer", "{55476FDB-166A-48B0-83F3-2678528C4699}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{DE3A3C77-28F1-421C-9612-FEF6DA7BDB83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "AngularjsMvc\PresentationLayer.csproj", "{B37422B5-D8F1-4B36-B461-B5AE1C6DCC05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{CF706020-0A24-4022-8D02-26E6A07E518A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Commons\Commons.csproj", "{AAD870F2-DC2B-47FB-91ED-3EFA431E64F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,13 +23,13 @@ Global
 		{CF706020-0A24-4022-8D02-26E6A07E518A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF706020-0A24-4022-8D02-26E6A07E518A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF706020-0A24-4022-8D02-26E6A07E518A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD870F2-DC2B-47FB-91ED-3EFA431E64F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD870F2-DC2B-47FB-91ED-3EFA431E64F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD870F2-DC2B-47FB-91ED-3EFA431E64F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD870F2-DC2B-47FB-91ED-3EFA431E64F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B37422B5-D8F1-4B36-B461-B5AE1C6DCC05} = {55476FDB-166A-48B0-83F3-2678528C4699}
-		{CF706020-0A24-4022-8D02-26E6A07E518A} = {DE3A3C77-28F1-421C-9612-FEF6DA7BDB83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C33122C3-96D4-41BE-8A81-08FC1AEFE683}

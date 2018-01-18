@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AngularjsMvc.DAL;
-using AngularjsMvc.Models.EF;
+using Commons;
+using DataAccessLayer;
 
 namespace AngularjsMvc.Controllers
 {

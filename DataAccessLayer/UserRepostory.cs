@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Commons;
+using DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using AngularjsMvc.Models.EF;
 
-namespace AngularjsMvc.DAL
+
+namespace DataAccessLayer
 {
     
     public class UserRepostory : IRepository
